@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
+    <style>
+        p{
+            
+            text-align:center;
+            width:200px;
+            padding: 10px 15px;
+        }</style>
+</head> 
+<body>
+    <button id='startAnim'>Start Animation</button>
+    <button id='hide_show'>Hide/ Show</button>
+    <button id='fadeIt'>Fade</button>
+    <button id='slideIt'>Slide Up/Down</button>
+  
+    <p>Happy Birthday Sam</p>
+    <script> 
+    	var cnt = 1;
+    	$("#startAnim").click(()=>{
+    		if(cnt==1){
+    			$("p").animate({
+	    			fontSize: "3em",
+				    opacity: '0.7',
+				    height: '+=100px'
+				});
+				cnt+=1; 
+    		}
+    		else{
+    			$("p").animate({
+	    			marginLeft: "+=50px",
+				    opacity: '0.4',
+				    width: '+=100px'
+				});
+				cnt = 1;
+    		}
+    	})
+
+    	$("#hide_show").click(()=>{
+    		$("p").toggle();
+    	})
+
+    	$("#fadeIt").click(()=>{
+    		$("p").fadeTo("slow",0.2);
+    	})
+
+    	$("#slideIt").click(()=>{
+    		$("p").slideToggle();
+    	})
+
+    	$("#stopIt").click(()=>{
+    		$("p").stop();
+    	})
+
+  
+    	$(document).ready(function(){
+   $("#b1").click(function(){
+    $("#d").animate({fontSize:"3em",opacity:"0.4",width:"+=100px"}).fadeTo("slow",0.7).animate({marginLeft:"+=50px",fontSize:"40px"}).fadeTo("slow",0.7);
+   });
+   $("#b2").click(function(){
+    $("#d").toggle();
+   });
+   $("#b3").click(function(){
+    $("#d").fadeTo("slow",0.2);
+   });
+   $("#b4").click(function(){
+    $("#d").slideToggle();
+   });
+   $("#b5").click(function(){
+    $("#d").stop(false,true);
+ 
+   })
+   
+  });
+    </script>
+</body>
+</html>
